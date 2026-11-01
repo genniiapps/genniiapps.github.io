@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Limits Privacy Policy</title>
+<meta name="description" content="Privacy policy of the Limits browser extension by GeNNii Apps.">
+<link rel="icon" href="../icon.png">
+<style>
+@font-face{font-family:"Unbounded";src:url("../../fonts/unbounded-latin.woff2") format("woff2");font-weight:400 700;font-display:swap}
+:root{--bg:#000;--card:#0e0e10;--fg:#ededf0;--mute:#9a9aa3;--line:#1f1f24;--acc:#f5a524;
+--display:"Unbounded",system-ui,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding:48px 16px 64px}
+main{max-width:44rem;margin:0 auto;display:flex;flex-direction:column;gap:20px;animation:in .4s cubic-bezier(0.05,0.7,0.1,1) both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){main{animation:fade .3s both}@keyframes fade{from{opacity:0}to{opacity:1}}}
+header{display:flex;align-items:center;gap:12px}
+header img{width:36px;height:36px;border-radius:9px}
+.brand{font:600 1.1rem var(--display)}
+h1{font:600 clamp(1.6rem,5vw,2.2rem)/1.15 var(--display);margin:8px 0 0}
+.date{color:var(--mute);font-size:.9rem;margin:0}
+.lead{font-size:1.05rem;margin:0}
+section{border-top:1px solid var(--line);padding-top:16px}
+h2{font:600 .95rem var(--display);margin:0 0 6px}
+section p{margin:0}
+code{font:.85em ui-monospace,Menlo,Consolas,monospace;background:var(--card);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+a{color:var(--acc)}
+footer{color:var(--mute);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<header><img src="../icon.png" alt=""><span class="brand">Limits</span></header>
+<h1>Privacy policy</h1>
+<p class="date">Last updated: 1 November 2026.</p>
+<p class="lead">Limits shows your own usage limits for Claude (claude.ai) and Codex (chatgpt.com) in a browser popup.</p>
+<section><h2>What it reads</h2><p>Only when you allow access to a site, and only from that site: the usage percentages and reset times that the site's own usage page shows. For chatgpt.com it also asks the site for a short-lived sign-in token and sends it straight back to chatgpt.com in the single usage request. The token is kept in memory for that one request and is never stored or sent anywhere else.</p></section>
+<section><h2>What it does not read</h2><p>Your chats, prompts, files, passwords, cookies or browsing history.</p></section>
+<section><h2>What it keeps</h2><p>In your browser only (<code>chrome.storage.local</code>): the last percentages and reset times, the names of model limits the site reports (for example "Opus"), the time of the last check, the ID of your claude.ai organization (so it does not have to look it up every time), your settings, and small service notes about retries (when each site was last asked and how long to wait after an error). When you sign out of claude.ai, the organization ID is removed. When you turn a site off or take back its access, its organization ID and timing notes are removed; only a pause the site itself asked for (a rate limit or a human check) is kept until it ends. The answers of claude.ai and chatgpt.com also contain your name and email; Limits drops them right away and never stores them.</p></section>
+<section><h2>Where data goes</h2><p>Nowhere. Limits has no server, no analytics, no ads and no tracking, and it does not sell or share data.</p></section>
+<section><h2>Requests it makes</h2><p>Every few minutes (1, 5 or 15, you choose), when you open the popup, press refresh, change a setting or grant access to a site, but never more than once per 30–60 seconds per site: <code>GET https://claude.ai/api/organizations</code>, <code>GET https://claude.ai/api/organizations/&lt;id&gt;/usage</code>, <code>GET https://chatgpt.com/api/auth/session</code>, <code>GET https://chatgpt.com/backend-api/wham/usage</code>. Turning a site off in the settings stops all requests to it and gives the access back.</p></section>
+<section><h2>Limited Use</h2><p>The use of information received from claude.ai and chatgpt.com complies with the Chrome Web Store User Data Policy, including the Limited Use requirements. It is used only to show you your own limits.</p></section>
+<section><h2>Not affiliated</h2><p>Limits is an independent project, not affiliated with or endorsed by Anthropic or OpenAI. Claude is a trademark of Anthropic, PBC. ChatGPT and Codex are trademarks of OpenAI.</p></section>
+<section><h2>Contact</h2><p>Email <a href="mailto:gennii.apps@gmail.com">gennii.apps@gmail.com</a> or use the "Support" tab of Limits in the Chrome Web Store.</p></section>
+<footer>© 2026 GeNNii Apps</footer>
+</main>
+</body>
+</html>
